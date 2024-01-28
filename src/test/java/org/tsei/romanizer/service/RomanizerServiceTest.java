@@ -2,29 +2,48 @@ package org.tsei.romanizer.service;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class RomanizerServiceTest {
 
     @Test
     public void testRomanizerOneWord() {
         RomanizerService romanizerService = new RomanizerService();
-        String strOne = "Мыекъуапэ";
-        System.out.println("1.");
-        System.out.println(strOne);
-        System.out.println(romanizerService.romanize(strOne));
-        System.out.println();
-        String strTwo = "къэлэ";
-        System.out.println("2.");
-        System.out.println(strTwo);
-        System.out.println(romanizerService.romanize(strTwo));
-        System.out.println();
-        String strThree = "дах";
-        System.out.println("3.");
-        System.out.println(strThree);
-        System.out.println(romanizerService.romanize(strThree));
-        String strFour = "Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ. Ахэмэ чъыг сатыр дахэхэр атетых. Тыдэ уплъагъэми урамхэр къабзэх.";
-        System.out.println();
-        System.out.println("4.");
-        System.out.println(strFour);
-        System.out.println(romanizerService.romanize(strFour));
+        String input = "Мыекъуапэ";
+        String output = "Mǝeqvapэ";
+        assertEquals(output, romanizerService.romanize(input));
+    }
+
+    @Test
+    public void testRomanizerSecondWord() {
+        RomanizerService romanizerService = new RomanizerService();
+        String input = "къэлэ";
+        String output = "qэlэ";
+        assertEquals(output, romanizerService.romanize(input));
+    }
+
+    @Test
+    public void testRomanizerThirdWord() {
+        RomanizerService romanizerService = new RomanizerService();
+        String input = "дах";
+        String output = "daх";
+        assertEquals(output, romanizerService.romanize(input));
+    }
+
+    @Test
+    public void testRomanizerSentenceOne() {
+        RomanizerService romanizerService = new RomanizerService();
+        String input = "Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ. Ахэмэ чъыг сатыр дахэхэр атетых. Тыдэ уплъагъэми урамхэр къабзэх.";
+        String output = "Ti Mǝeqvapэ qэlэ dax. Ar vram zэnⱪabzэxэmⱪэ zэtevtǝгэ. Axэmэ đǝg satǝr daxэxэr atetǝx. Tǝdэ vpłaгэmi vramxэr qabzэx.";
+        assertEquals(output, romanizerService.romanize(input));
+    }
+
+    @Test
+    public void testRomanizerSentenceTwo() {
+        RomanizerService romanizerService = new RomanizerService();
+        String input = "Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ. Ахэмэ чъыг сатыр дахэхэр атетых. Тыдэ уплъагъэми урамхэр къабзэх. Мыекъуапэ икъыблэ лъэныкъокӀэ псыхъоу Шъхьэгуащэ речъэкӀы. Псыхъом ыкӀыбкӀэ мэз Ӏужъу зытет къушъхьэ лъагэхэр къалэм къышъхьарэплъэх. Зы бгъумкӀэ бгы  лъагэр къалэм рекӀокӀы, адрэбгъумкӀэ чӀыгур зэныбжь. А чӀыгу зэныбжьым унакӀэхэр бэу зэтетхэу щашӀых.";
+        String output = "Ti Mǝeqvapэ qэlэ dax. Ar vram zэnⱪabzэxэmⱪэ zэtevtǝгэ. Axэmэ đǝg satǝr daxэxэr atetǝx. Tǝdэ vpłaгэmi vramxэr qabzэx. Mǝeqvapэ iqǝblэ łэnǝqoⱪэ psǝҳov Šɦэgvaʃэ ređэⱪǝ. Psǝҳom ǝⱪǝbⱪэ mэz hvⲍv zǝtet qvšɦэ łagэxэr qalэm qǝšɦarэpłэx. Zǝ bгvmⱪэ bgǝ  łagэr qalэm reⱪoⱪǝ, adrэbгvmⱪэ ḍǝgvr zэnǝbե. A ḍǝgv zэnǝbեǝm vnaⱪэxэr bэv zэtetxэv ʃaꜧǝx.";
+        System.out.println(output);
+        assertEquals(output, romanizerService.romanize(input));
     }
 }
