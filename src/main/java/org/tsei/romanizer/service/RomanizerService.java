@@ -1,8 +1,12 @@
 package org.tsei.romanizer.service;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
+@Slf4j
 public class RomanizerService {
 
     Map<String, String> alphabet = new HashMap<>() {{
@@ -257,30 +261,50 @@ public class RomanizerService {
 
     public String romanize(String cyrillicVersion) {
         StringBuilder romanizedVersion = new StringBuilder();
+        AtomicBoolean errorLogged = new AtomicBoolean(false);
         for (int index = 0; index < cyrillicVersion.length(); index++) {
-            if (Character.UnicodeBlock.of(cyrillicVersion.charAt(index)).equals(Character.UnicodeBlock.CYRILLIC)
-                                    || weirdLetter.containsKey(String.valueOf(cyrillicVersion.charAt(index)))) {
-                int endOfWordIndex = index;
-                while ((Character.UnicodeBlock.of(cyrillicVersion.charAt(endOfWordIndex)).equals(Character.UnicodeBlock.CYRILLIC)
-                        || weirdLetter.containsKey(String.valueOf(cyrillicVersion.charAt(endOfWordIndex)))) && endOfWordIndex < cyrillicVersion.length() - 1) {
-                    endOfWordIndex++;
-                }
-
-                while (!alphabet.containsKey(cyrillicVersion.substring(index, endOfWordIndex)) && endOfWordIndex > index) {
-                    endOfWordIndex--;
-                }
-
-                if (endOfWordIndex != index) {
-                    romanizedVersion.append(alphabet.get(cyrillicVersion.substring(index, endOfWordIndex)));
-                    index = endOfWordIndex - 1;
-                } else {
-                    romanizedVersion.append(cyrillicVersion.charAt(index));
-                }
+            if (cyrillicOrStopLetter(cyrillicVersion, index)) {
+                int endOfCyrillicLetterIndex = getEndOfCyrillicLetterIndex(cyrillicVersion, index, getEndOfWordIndex(cyrillicVersion, index));
+                index = romanizeLetterAndAdd(cyrillicVersion, index, endOfCyrillicLetterIndex, romanizedVersion, errorLogged);
             } else {
                 romanizedVersion.append(cyrillicVersion.charAt(index));
             }
         }
         return romanizedVersion.toString();
+    }
+
+    private boolean cyrillicOrStopLetter(String cyrillicVersion, int index) {
+        return Character.UnicodeBlock.of(cyrillicVersion.charAt(index)).equals(Character.UnicodeBlock.CYRILLIC)
+                || weirdLetter.containsKey(String.valueOf(cyrillicVersion.charAt(index)));
+    }
+
+    private int getEndOfWordIndex(String cyrillicVersion, int index) {
+        int endOfWordIndex = index;
+        while (cyrillicOrStopLetter(cyrillicVersion, index) && endOfWordIndex < cyrillicVersion.length() - 1) {
+            endOfWordIndex++;
+        }
+        return endOfWordIndex;
+    }
+
+    private int getEndOfCyrillicLetterIndex(String cyrillicVersion, int index, int endOfWordIndex) {
+        while (!alphabet.containsKey(cyrillicVersion.substring(index, endOfWordIndex)) && endOfWordIndex > index) {
+            endOfWordIndex--;
+        }
+        return endOfWordIndex;
+    }
+
+    private int romanizeLetterAndAdd(String cyrillicVersion, int index, int endOfCyrillicLetterIndex, StringBuilder romanizedVersion, AtomicBoolean errorLogged) {
+        if (endOfCyrillicLetterIndex != index) {
+            romanizedVersion.append(alphabet.get(cyrillicVersion.substring(index, endOfCyrillicLetterIndex)));
+            index = endOfCyrillicLetterIndex - 1;
+        } else {
+            romanizedVersion.append(cyrillicVersion.charAt(index));
+            if (!errorLogged.get()) {
+                log.error("Error converting text: " + cyrillicVersion);
+                errorLogged.set(true);
+            }
+        }
+        return index;
     }
 
 }
