@@ -1,12 +1,14 @@
 package org.tsei.romanizer.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
+@Service
 public class RomanizerService {
 
     Map<String, String> alphabet = new HashMap<>() {{
