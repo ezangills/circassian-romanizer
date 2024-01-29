@@ -18,10 +18,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
+    compileOnly 'io.github.createam-labs:spring-boot-starter-heroku:1.1'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+jar {
+    enabled = false
+    manifest.attributes["Main-Class"] = "org.tsei.romanizer.CircassianRomanizerApplication"
 }
