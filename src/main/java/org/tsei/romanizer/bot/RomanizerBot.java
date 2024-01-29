@@ -14,6 +14,7 @@ import org.tsei.romanizer.service.RomanizerService;
 @Slf4j
 @Component
 public class RomanizerBot extends TelegramLongPollingBot {
+    private static final String ROMANIZE_COMMAND = "/romanize";
     private final RomanizerService romanizerService;
 
     public RomanizerBot(@Autowired RomanizerService romanizerService,
@@ -27,11 +28,11 @@ public class RomanizerBot extends TelegramLongPollingBot {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
             long chat_id = update.getMessage().getChatId();
-            if (messageText.startsWith("/romanize")) {
+            if (messageText.startsWith(ROMANIZE_COMMAND)) {
                 try {
                     SendMessage message = new SendMessage();
                     message.setChatId(chat_id);
-                    message.setText(romanizerService.romanize(messageText));
+                    message.setText(romanizerService.romanize(messageText.replace(ROMANIZE_COMMAND, "")));
                     execute(message);
                 } catch (TelegramApiException e) {
                     log.error("Could not romanize: " + messageText);
