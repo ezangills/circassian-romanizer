@@ -28,14 +28,7 @@ public class RomanizerBot extends TelegramLongPollingBot {
             String messageText = update.getMessage().getText();
             long chat_id = update.getMessage().getChatId();
             if (messageText.startsWith(ROMANIZE_COMMAND)) {
-                try {
-                    SendMessage message = new SendMessage();
-                    message.setChatId(chat_id);
-                    message.setText(romanizerService.romanize(messageText.replace(ROMANIZE_COMMAND, "")));
-                    execute(message);
-                } catch (TelegramApiException e) {
-                    log.error("Could not romanize: " + messageText);
-                }
+                romanize(chat_id, messageText);
             } else if (messageText.startsWith("/help")) {
                 try {
                     SendMessage message = new SendMessage();
@@ -43,7 +36,27 @@ public class RomanizerBot extends TelegramLongPollingBot {
                     message.setText("/romanize Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ.");
                     execute(message);
                 } catch (Exception ignore) {}
+            } else if (messageText.startsWith("/print-alphabet")) {
+                try {
+                    SendMessage message = new SendMessage();
+                    message.setChatId(chat_id);
+                    message.setText(romanizerService.getAlphabet());
+                    execute(message);
+                } catch (Exception ignore) {}
+            } else {
+                romanize(chat_id, messageText);
             }
+        }
+    }
+
+    private void romanize(long chat_id, String messageText) {
+        try {
+            SendMessage message = new SendMessage();
+            message.setChatId(chat_id);
+            message.setText(romanizerService.romanize(messageText.replace(ROMANIZE_COMMAND, "")));
+            execute(message);
+        } catch (TelegramApiException e) {
+            log.error("Could not romanize: " + messageText);
         }
     }
 

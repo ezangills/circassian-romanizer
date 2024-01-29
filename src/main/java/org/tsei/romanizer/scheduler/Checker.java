@@ -7,7 +7,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.tsei.romanizer.dto.RomanizerRequest;
-import org.tsei.romanizer.dto.RomanizerResponse;
 
 @Component
 @Slf4j

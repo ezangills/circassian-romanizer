@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Service
 public class RomanizerService {
 
-    Map<String, String> alphabet = new HashMap<>() {{
+    private final Map<String, String> alphabet = new HashMap<>() {{
         put("а", "a");
         put("А", "A");
         put("б", "b");
@@ -36,8 +36,8 @@ public class RomanizerService {
         put("Дзу", "Ʒv");
         put("е", "e");
         put("Е", "E");
-        put("ё", "e");
-        put("Ё", "E");
+        put("ё", "yo");
+        put("Ё", "Yo");
         put("ж", "j");
         put("Ж", "J");
         put("жъ", "ⲍ");
@@ -58,7 +58,12 @@ public class RomanizerService {
         put("Ку", "Kv");
         put("къ", "q");
         put("Къ", "Q");
+        put("къу", "qv");
         put("Къу", "Qv");
+        put("кхъ", "ꝙ");
+        put("Кхъ", "Ꝙ");
+        put("кхъу", "ꝙv");
+        put("Кхъу", "Ꝙv");
 
         put("кl", "ⱪ");
         put("Кl", "Ⱪ");
@@ -204,6 +209,24 @@ public class RomanizerService {
         put("У", "V");
         put("ф", "f");
         put("Ф", "F");
+
+        put("фl", "\uD806\uDEDA");
+        put("Фl", "ꟻ");
+        put("ф1", "\uD806\uDEDA");
+        put("Ф1", "ꟻ");
+        put("ф|", "\uD806\uDEDA");
+        put("Ф|", "ꟻ");
+        put("ф'", "\uD806\uDEDA");
+        put("Ф'", "ꟻ");
+        put("ф’", "\uD806\uDEDA");
+        put("Ф’", "ꟻ");
+        put("фӀ", "\uD806\uDEDA");
+        put("ФӀ", "ꟻ");
+        put("фI", "\uD806\uDEDA");
+        put("ФI", "ꟻ");
+        put("фi", "\uD806\uDEDA");
+        put("Фi", "ꟻ");
+
         put("х", "x");
         put("Х", "X");
         put("хъ", "ҳ");
@@ -234,10 +257,10 @@ public class RomanizerService {
         put("цi", "ç");
         put("Цi", "Ç");
 
-        put("ч", "ꝁ");
-        put("Ч", "Ꝁ");
-        put("чъ", "đ");
-        put("Чъ", "Đ");
+        put("ч", "ƌ");
+        put("Ч", "Ƌ");
+        put("чъ", "ɖ");
+        put("Чъ", "Ɖ");
 
         put("чl", "ḍ");
         put("Чl", "Ḍ");
@@ -299,6 +322,24 @@ public class RomanizerService {
 
         put("щ", "ʃ");
         put("Щ", "Ʃ");
+
+        put("щl", "ṣ");
+        put("Щl", "Ṣ");
+        put("щ1", "ṣ");
+        put("Щ1", "Ṣ");
+        put("щ|", "ṣ");
+        put("Щ|", "Ṣ");
+        put("щ'", "ṣ");
+        put("Щ'", "Ṣ");
+        put("щ’", "ṣ");
+        put("Щ’", "Ṣ");
+        put("щӀ", "ṣ");
+        put("ЩӀ", "Ṣ");
+        put("щI", "ṣ");
+        put("ЩI", "Ṣ");
+        put("щi", "ṣ");
+        put("Щi", "Ṣ");
+
         put("ы", "ǝ");
         put("Ы", "Ǝ");
         put("э", "э");
@@ -385,4 +426,11 @@ public class RomanizerService {
         return index;
     }
 
+    public String getAlphabet() {
+        StringBuilder result = new StringBuilder();
+        alphabet.forEach((k, v) -> {
+            result.append(k + ": " + v + "; ");
+        });
+        return result.toString();
+    }
 }
