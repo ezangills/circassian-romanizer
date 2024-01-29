@@ -19,6 +19,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     compileOnly 'io.github.createam-labs:spring-boot-starter-heroku:1.1'
+    implementation 'org.telegram:telegrambots-spring-boot-starter:6.8.0'
+    implementation 'org.telegram:telegrambots:6.8.0'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

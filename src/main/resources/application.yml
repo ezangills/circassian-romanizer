@@ -1,0 +1,3 @@
+heroku:
+  enforceHttps: true
+bot-token: ${BOT_TOKEN}
