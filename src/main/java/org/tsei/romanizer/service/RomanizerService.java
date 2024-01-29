@@ -313,6 +313,7 @@ public class RomanizerService {
         put("|", "h");
         put("Ӏ", "h");
         put("I", "h");
+        put("i", "h");
 
         put("lу", "hv");
         put("1у", "hv");
