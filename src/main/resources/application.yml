@@ -1,3 +1,6 @@
 heroku:
   enforceHttps: true
+spring:
+  main:
+    web-application-type: none
 bot-token: ${BOT_TOKEN}
