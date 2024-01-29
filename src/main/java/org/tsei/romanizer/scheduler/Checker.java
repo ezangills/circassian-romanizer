@@ -15,7 +15,7 @@ public class Checker {
 
     @Value("${url}") private String url;
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 20 * 60000)
     public void callItself() {
         ResponseEntity<String> romanizerResponseResponseEntity = new RestTemplate().postForEntity(url, new RomanizerRequest("Ти Мыекъуапэ къэлэ дах."), String.class);
         log.info("Scheduled status code: " + romanizerResponseResponseEntity.getStatusCode());
