@@ -303,10 +303,10 @@ public class RomanizerService {
         put("Ы", "Ǝ");
         put("э", "э");
         put("Э", "Э");
-        put("ю", "iu");
-        put("Ю", "Iu");
-        put("я", "ia");
-        put("Я", "Ia");
+        put("ю", "yu");
+        put("Ю", "Yu");
+        put("я", "ya");
+        put("Я", "Ya");
 
         put("l", "h");
         put("1", "h");
