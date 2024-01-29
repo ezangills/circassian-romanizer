@@ -40,7 +40,7 @@ public class RomanizerBot extends TelegramLongPollingBot {
                 try {
                     SendMessage message = new SendMessage();
                     message.setChatId(chat_id);
-                    message.setText("**Example:** %0A/romanize Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ.");
+                    message.setText("/romanize Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ.");
                     execute(message);
                 } catch (Exception ignore) {}
             }
