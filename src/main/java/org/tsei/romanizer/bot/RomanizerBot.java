@@ -3,7 +3,6 @@ package org.tsei.romanizer.bot;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -37,6 +36,13 @@ public class RomanizerBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                     log.error("Could not romanize: " + messageText);
                 }
+            } else if (messageText.startsWith("/help")) {
+                try {
+                    SendMessage message = new SendMessage();
+                    message.setChatId(chat_id);
+                    message.setText("**Example:** %0A/romanize Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ.");
+                    execute(message);
+                } catch (Exception ignore) {}
             }
         }
     }
