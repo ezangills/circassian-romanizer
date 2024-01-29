@@ -233,8 +233,8 @@ public class RomanizerService {
         put("Хъ", "Ҳ");
         put("хъу", "ҳv");
         put("Хъу", "Ҳv");
-        put("хь", "ɦ");
-        put("Хь", "Ɦ");
+        put("хь", "ḩ");
+        put("Хь", "Ḩ");
         put("ц", "c");
         put("Ц", "C");
         put("цу", "cv");
