@@ -54,4 +54,12 @@ public class RomanizerServiceTest {
         String output = "ianэ sэꝓǝs. ianэ sэꝓǝs. ianэ sэꝓǝs. ianэ sэꝓǝs. ianэ sэꝓǝs. ianэ sэꝓǝs.";
         assertEquals(output, romanizerService.romanize(input));
     }
+
+    @Test
+    public void testTwo() {
+        RomanizerService romanizerService = new RomanizerService();
+        String input = "IаплI";
+        String output = "hapḷ";
+        assertEquals(output, romanizerService.romanize(input));
+    }
 }
