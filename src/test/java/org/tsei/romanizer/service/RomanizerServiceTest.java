@@ -46,4 +46,12 @@ public class RomanizerServiceTest {
         System.out.println(output);
         assertEquals(output, romanizerService.romanize(input));
     }
+
+    @Test
+    public void testI() {
+        RomanizerService romanizerService = new RomanizerService();
+        String input = "пI";
+        String output = "ꝓ";
+        assertEquals(output, romanizerService.romanize(input));
+    }
 }

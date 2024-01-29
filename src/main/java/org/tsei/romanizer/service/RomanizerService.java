@@ -72,6 +72,8 @@ public class RomanizerService {
         put("К’", "Ⱪ");
         put("кӀ", "ⱪ");
         put("КӀ", "Ⱪ");
+        put("кI", "ⱪ");
+        put("КI", "Ⱪ");
         put("кi", "ⱪ");
         put("Кi", "Ⱪ");
 
@@ -87,6 +89,8 @@ public class RomanizerService {
         put("К’у", "Ⱪv");
         put("кӀу", "ⱪv");
         put("КӀу", "Ⱪv");
+        put("кIу", "ⱪv");
+        put("КIу", "Ⱪv");
         put("кiу", "ⱪv");
         put("Кiу", "Ⱪv");
 
@@ -107,6 +111,8 @@ public class RomanizerService {
         put("Л’", "Ḷ");
         put("лӀ", "ḷ");
         put("ЛӀ", "Ḷ");
+        put("лI", "ḷ");
+        put("ЛI", "Ḷ");
         put("лi", "ḷ");
         put("Лi", "Ḷ");
 
@@ -131,6 +137,8 @@ public class RomanizerService {
         put("П’", "Ꝓ");
         put("пӀ", "ꝓ");
         put("ПӀ", "Ꝓ");
+        put("пI", "ꝓ");
+        put("ПI", "Ꝓ");
         put("пi", "ꝓ");
         put("Пi", "Ꝓ");
 
@@ -146,6 +154,8 @@ public class RomanizerService {
         put("П’у", "Ꝓv");
         put("пӀу", "ꝓv");
         put("ПӀу", "Ꝓv");
+        put("пIу", "ꝓv");
+        put("ПIу", "Ꝓv");
         put("пiу", "ꝓv");
         put("Пiу", "Ꝓv");
 
@@ -168,6 +178,8 @@ public class RomanizerService {
         put("Т’", "Ţ");
         put("тӀ", "ţ");
         put("ТӀ", "Ţ");
+        put("тI", "ţ");
+        put("ТI", "Ţ");
         put("тi", "ţ");
         put("Тi", "Ţ");
 
@@ -183,6 +195,8 @@ public class RomanizerService {
         put("Т’у", "Ţv");
         put("тӀу", "ţv");
         put("ТӀу", "Ţv");
+        put("тIу", "ţv");
+        put("ТIу", "Ţv");
         put("тiу", "ţv");
         put("Тiу", "Ţv");
 
@@ -215,6 +229,8 @@ public class RomanizerService {
         put("Ц’", "Ç");
         put("цӀ", "ç");
         put("ЦӀ", "Ç");
+        put("цI", "ç");
+        put("ЦI", "Ç");
         put("цi", "ç");
         put("Цi", "Ç");
 
@@ -235,6 +251,8 @@ public class RomanizerService {
         put("Ч’", "Ḍ");
         put("чӀ", "ḍ");
         put("ЧӀ", "Ḍ");
+        put("чI", "ḍ");
+        put("ЧI", "Ḍ");
         put("чi", "ḍ");
         put("Чi", "Ḍ");
 
@@ -257,6 +275,8 @@ public class RomanizerService {
         put("Ш’", "Ꜧ");
         put("шӀ", "ꜧ");
         put("ШӀ", "Ꜧ");
+        put("шI", "ꜧ");
+        put("ШI", "Ꜧ");
         put("шi", "ꜧ");
         put("Шi", "Ꜧ");
 
@@ -272,6 +292,8 @@ public class RomanizerService {
         put("Ш’у", "Ꜧv");
         put("шӀу", "ꜧv");
         put("ШӀу", "Ꜧv");
+        put("шIу", "ꜧv");
+        put("ШIу", "Ꜧv");
         put("шiу", "ꜧv");
         put("Шiу", "Ꜧv");
 
@@ -295,6 +317,7 @@ public class RomanizerService {
         put("1у", "hv");
         put("|у", "hv");
         put("Ӏу", "hv");
+        put("Iу", "hv");
         put("iу", "hv");
 
         put("ъ", "");
@@ -330,7 +353,7 @@ public class RomanizerService {
 
     private int getEndOfWordIndex(String cyrillicVersion, int index) {
         int endOfWordIndex = index;
-        while (cyrillicOrStopLetter(cyrillicVersion, index) && endOfWordIndex < cyrillicVersion.length() - 1) {
+        while (cyrillicOrStopLetter(cyrillicVersion, index) && endOfWordIndex < cyrillicVersion.length()) {
             endOfWordIndex++;
         }
         return endOfWordIndex;
