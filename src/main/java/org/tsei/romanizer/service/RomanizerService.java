@@ -68,8 +68,12 @@ public class RomanizerService {
         put("К|", "Ⱪ");
         put("к'", "ⱪ");
         put("К'", "Ⱪ");
+        put("к’", "ⱪ");
+        put("К’", "Ⱪ");
         put("кӀ", "ⱪ");
         put("КӀ", "Ⱪ");
+        put("кi", "ⱪ");
+        put("Кi", "Ⱪ");
 
         put("кlу", "ⱪv");
         put("Кlу", "Ⱪv");
@@ -79,8 +83,12 @@ public class RomanizerService {
         put("К|у", "Ⱪv");
         put("к'у", "ⱪv");
         put("К'у", "Ⱪv");
+        put("к’у", "ⱪv");
+        put("К’у", "Ⱪv");
         put("кӀу", "ⱪv");
         put("КӀу", "Ⱪv");
+        put("кiу", "ⱪv");
+        put("Кiу", "Ⱪv");
 
         put("л", "l");
         put("Л", "L");
@@ -95,8 +103,12 @@ public class RomanizerService {
         put("Л|", "Ḷ");
         put("л'", "ḷ");
         put("Л'", "Ḷ");
+        put("л’", "ḷ");
+        put("Л’", "Ḷ");
         put("лӀ", "ḷ");
         put("ЛӀ", "Ḷ");
+        put("лi", "ḷ");
+        put("Лi", "Ḷ");
 
         put("м", "m");
         put("М", "M");
@@ -115,8 +127,12 @@ public class RomanizerService {
         put("П|", "Ꝓ");
         put("п'", "ꝓ");
         put("П'", "Ꝓ");
+        put("п’", "ꝓ");
+        put("П’", "Ꝓ");
         put("пӀ", "ꝓ");
         put("ПӀ", "Ꝓ");
+        put("пi", "ꝓ");
+        put("Пi", "Ꝓ");
 
         put("пlу", "ꝓv");
         put("Пlу", "Ꝓv");
@@ -126,8 +142,12 @@ public class RomanizerService {
         put("П|у", "Ꝓv");
         put("п'у", "ꝓv");
         put("П'у", "Ꝓv");
+        put("п’у", "ꝓv");
+        put("П’у", "Ꝓv");
         put("пӀу", "ꝓv");
         put("ПӀу", "Ꝓv");
+        put("пiу", "ꝓv");
+        put("Пiу", "Ꝓv");
 
         put("р", "r");
         put("Р", "R");
@@ -144,8 +164,12 @@ public class RomanizerService {
         put("Т|", "Ţ");
         put("т'", "ţ");
         put("Т'", "Ţ");
+        put("т’", "ţ");
+        put("Т’", "Ţ");
         put("тӀ", "ţ");
         put("ТӀ", "Ţ");
+        put("тi", "ţ");
+        put("Тi", "Ţ");
 
         put("тlу", "ţv");
         put("Тlу", "Ţv");
@@ -155,8 +179,12 @@ public class RomanizerService {
         put("Т|у", "Ţv");
         put("т'у", "ţv");
         put("Т'у", "Ţv");
+        put("т’у", "ţv");
+        put("Т’у", "Ţv");
         put("тӀу", "ţv");
         put("ТӀу", "Ţv");
+        put("тiу", "ţv");
+        put("Тiу", "Ţv");
 
         put("у", "v");
         put("У", "V");
@@ -183,8 +211,12 @@ public class RomanizerService {
         put("Ц|", "Ç");
         put("ц'", "ç");
         put("Ц'", "Ç");
+        put("ц’", "ç");
+        put("Ц’", "Ç");
         put("цӀ", "ç");
         put("ЦӀ", "Ç");
+        put("цi", "ç");
+        put("Цi", "Ç");
 
         put("ч", "ꝁ");
         put("Ч", "Ꝁ");
@@ -199,8 +231,12 @@ public class RomanizerService {
         put("Ч|", "Ḍ");
         put("ч'", "ḍ");
         put("Ч'", "Ḍ");
+        put("ч’", "ḍ");
+        put("Ч’", "Ḍ");
         put("чӀ", "ḍ");
         put("ЧӀ", "Ḍ");
+        put("чi", "ḍ");
+        put("Чi", "Ḍ");
 
         put("ш", "ħ");
         put("Ш", "Ħ");
@@ -217,8 +253,12 @@ public class RomanizerService {
         put("Ш|", "Ꜧ");
         put("ш'", "ꜧ");
         put("Ш'", "Ꜧ");
+        put("ш’", "ꜧ");
+        put("Ш’", "Ꜧ");
         put("шӀ", "ꜧ");
         put("ШӀ", "Ꜧ");
+        put("шi", "ꜧ");
+        put("Шi", "Ꜧ");
 
         put("шlу", "ꜧv");
         put("Шlу", "Ꜧv");
@@ -228,8 +268,12 @@ public class RomanizerService {
         put("Ш|у", "Ꜧv");
         put("ш'у", "ꜧv");
         put("Ш'у", "Ꜧv");
+        put("ш’у", "ꜧv");
+        put("Ш’у", "Ꜧv");
         put("шӀу", "ꜧv");
         put("ШӀу", "Ꜧv");
+        put("шiу", "ꜧv");
+        put("Шiу", "Ꜧv");
 
         put("щ", "ʃ");
         put("Щ", "Ʃ");
@@ -251,6 +295,10 @@ public class RomanizerService {
         put("1у", "hv");
         put("|у", "hv");
         put("Ӏу", "hv");
+        put("iу", "hv");
+
+        put("ъ", "");
+        put("ь", "");
     }};
 
     private Map<String, String> weirdLetter = new HashMap<>() {{
