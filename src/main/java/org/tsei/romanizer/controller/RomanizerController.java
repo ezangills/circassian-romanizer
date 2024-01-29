@@ -14,7 +14,7 @@ import org.tsei.romanizer.service.RomanizerService;
 public class RomanizerController {
     private final RomanizerService romanizerService;
 
-    @PostMapping("/romanize")
+    //@PostMapping("/romanize")
     public @ResponseBody RomanizerResponse romanize(@RequestBody RomanizerRequest request) {
         return new RomanizerResponse(romanizerService.romanize(request.getText()));
     }
