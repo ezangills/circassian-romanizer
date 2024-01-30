@@ -26,6 +26,7 @@ public class RomanizerBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
+            log.info(messageText);
             long chat_id = update.getMessage().getChatId();
             if (messageText.startsWith(ROMANIZE_COMMAND)) {
                 romanize(chat_id, messageText);
