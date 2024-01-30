@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -365,6 +366,8 @@ public class RomanizerService {
 
         put("ъ", "");
         put("ь", "");
+        put("Ъ", "");
+        put("Ь", "");
     }};
 
     private Map<String, String> weirdLetter = new HashMap<>() {{
@@ -379,6 +382,7 @@ public class RomanizerService {
 
 
     public String romanize(String cyrillicVersion) {
+        cyrillicVersion = cyrillicVersion.toLowerCase(Locale.ROOT);
         StringBuilder romanizedVersion = new StringBuilder();
         AtomicBoolean errorLogged = new AtomicBoolean(false);
         for (int index = 0; index < cyrillicVersion.length(); index++) {
