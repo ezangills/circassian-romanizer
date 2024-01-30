@@ -3,14 +3,120 @@ package org.tsei.romanizer.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 @Service
 public class RomanizerService {
+
+    private final Map<String, String> alphabetToShow = new LinkedHashMap<>() {{
+        put("А", "A");
+        put("а", "a");
+        put("Б", "B");
+        put("б", "b");
+        put("В", "W");
+        put("в", "w");
+        put("Г", "G");
+        put("г", "g");
+        put("Гъ", "Г");
+        put("гъ", "г");
+        put("Д", "D");
+        put("д", "d");
+        put("Дж", "Ǥ");
+        put("дж", "ǥ");
+        put("Дз", "Ʒ");
+        put("дз", "ʒ");
+        put("Е", "E");
+        put("е", "e");
+        put("Ё", "Yo");
+        put("ё", "yo");
+        put("Ж", "J");
+        put("ж", "j");
+        put("Жъ", "Ⲍ");
+        put("жъ", "ⲍ");
+        put("Жь", "Ե");
+        put("жь", "ե");
+        put("З", "Z");
+        put("з", "z");
+        put("И", "I");
+        put("и", "i");
+        put("Й", "Y");
+        put("й", "y");
+        put("К", "K");
+        put("к", "k");
+        put("Къ", "Q");
+        put("къ", "q");
+        put("Кхъ", "Q̃");
+        put("кхъ", "q̃");
+        put("К1", "Ⱪ");
+        put("к1", "ⱪ");
+        put("Л", "L");
+        put("л", "l");
+        put("Лъ", "Ł");
+        put("лъ", "ł");
+        put("Л1", "Ḷ");
+        put("л1", "ḷ");
+        put("М", "M");
+        put("м", "m");
+        put("Н", "N");
+        put("н", "n");
+        put("О", "O");
+        put("о", "o");
+        put("П", "P");
+        put("п", "p");
+        put("П1", "Ᵽ");
+        put("п1", "ᵽ");
+        put("Р", "R");
+        put("р", "r");
+        put("С", "S");
+        put("с", "s");
+        put("Т", "T");
+        put("т", "t");
+        put("Т1", "Ţ");
+        put("т1", "ţ");
+        put("У", "V");
+        put("у", "v");
+        put("Ф", "F");
+        put("ф", "f");
+        put("Ф1", "ᆿ");
+        put("ф1", "\uD806\uDEDA");
+        put("Х", "X");
+        put("х", "x");
+        put("Хъ", "Ҳ");
+        put("хъ", "ҳ");
+        put("Хь", "Ḩ");
+        put("хь", "ḩ");
+        put("Ц", "C");
+        put("ц", "c");
+        put("Ц1", "Ç");
+        put("ц1", "ç");
+        put("Ч", "Ƌ");
+        put("ч", "ƌ");
+        put("Чъ", "Ɖ");
+        put("чъ", "ɖ");
+        put("Ч1", "Ḍ");
+        put("ч1", "ḍ");
+        put("Ш", "Ħ");
+        put("ш", "ħ");
+        put("Шъ", "Š");
+        put("шъ", "š");
+        put("Ш1", "Ӈ");
+        put("ш1", "ꜧ");
+        put("Щ", "Ʃ");
+        put("щ", "ʃ");
+        put("Щ1", "Ṣ");
+        put("щ1", "ṣ");
+        put("Ы", "Ǝ");
+        put("ы", "ǝ");
+        put("Э", "Э");
+        put("э", "э");
+        put("Ю", "Yu");
+        put("ю", "yu");
+        put("Я", "Ya");
+        put("я", "ya");
+        put("1", "h");
+    }};
 
     private final Map<String, String> alphabet = new HashMap<>() {{
         put("а", "a");
@@ -336,7 +442,18 @@ public class RomanizerService {
         put("i", "h");
     }};
 
-
+    public String printAlphabet() {
+        int count = 0;
+        StringBuilder result = new StringBuilder();
+        ArrayList<Map.Entry<String, String>> entries = new ArrayList<>(alphabet.entrySet());
+        for (int i = 0; i < entries.size(); i++) {
+            result.append(entries.get(i).getKey()).append(" ").append(entries.get(i + 1).getKey()).append(": ")
+                    .append(entries.get(i).getValue()).append(" ").append(entries.get(i + 1).getValue());
+            result.append("""
+                    """);
+        }
+        return result.toString();
+    }
 
     public String romanize(String cyrillicVersion) {
         StringBuilder romanizedVersion = new StringBuilder();
@@ -386,7 +503,7 @@ public class RomanizerService {
         return index;
     }
 
-    public String getAlphabet() {
+    public String printAllAlphabet() {
         StringBuilder result = new StringBuilder();
         alphabet.forEach((k, v) -> {
             result.append(k + ": " + v + "; ");

@@ -36,11 +36,18 @@ public class RomanizerBot extends TelegramLongPollingBot {
                     message.setText("/romanize Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ.");
                     execute(message);
                 } catch (Exception ignore) {}
+            } else if (messageText.startsWith("/print-alphabet-all")) {
+                try {
+                    SendMessage message = new SendMessage();
+                    message.setChatId(chat_id);
+                    message.setText(romanizerService.printAllAlphabet());
+                    execute(message);
+                } catch (Exception ignore) {}
             } else if (messageText.startsWith("/print-alphabet")) {
                 try {
                     SendMessage message = new SendMessage();
                     message.setChatId(chat_id);
-                    message.setText(romanizerService.getAlphabet());
+                    message.setText(romanizerService.printAlphabet());
                     execute(message);
                 } catch (Exception ignore) {}
             } else {
