@@ -116,8 +116,11 @@ public class RomanizerService {
         put("Я", "Ya");
         put("я", "ya");
         put("1", "h");
+        put("l", "h");
         put("Ъ", "");
+        put("ъ", "");
         put("Ь", "");
+        put("ь", "");
     }};
 
     private final Map<String, String> alphabet = new HashMap<>() {{
@@ -451,8 +454,7 @@ public class RomanizerService {
         for (int i = 0; i < entries.size() - 1; i+=2) {
             result.append(entries.get(i).getKey()).append(" ").append(entries.get(i + 1).getKey()).append(": ")
                     .append(entries.get(i).getValue()).append(" ").append(entries.get(i + 1).getValue());
-            result.append("""
-                    """);
+            result.append("\n");
         }
         return result.toString();
     }
