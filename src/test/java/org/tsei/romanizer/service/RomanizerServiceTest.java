@@ -78,7 +78,10 @@ public class RomanizerServiceTest {
         RomanizerService romanizerService = new RomanizerService();
         Set<String> values1 = new HashSet<>(romanizerService.getAlphabet().values());
         Set<String> values2 = new HashSet<>(romanizerService.getAlphabetToShow().values());
+        Set<String> keys1 = new HashSet<>(romanizerService.getAlphabet().keySet());
+        Set<String> keys2 = new HashSet<>(romanizerService.getAlphabetToShow().keySet());
         assertTrue(values1.containsAll(values2));
         assertTrue(values2.containsAll(values1));
+        assertTrue(keys1.containsAll(keys2));
     }
 }
