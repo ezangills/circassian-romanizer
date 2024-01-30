@@ -445,8 +445,8 @@ public class RomanizerService {
     public String printAlphabet() {
         int count = 0;
         StringBuilder result = new StringBuilder();
-        ArrayList<Map.Entry<String, String>> entries = new ArrayList<>(alphabet.entrySet());
-        for (int i = 0; i < entries.size(); i++) {
+        ArrayList<Map.Entry<String, String>> entries = new ArrayList<>(alphabetToShow.entrySet());
+        for (int i = 0; i < entries.size() - 1; i+=2) {
             result.append(entries.get(i).getKey()).append(" ").append(entries.get(i + 1).getKey()).append(": ")
                     .append(entries.get(i).getValue()).append(" ").append(entries.get(i + 1).getValue());
             result.append("""

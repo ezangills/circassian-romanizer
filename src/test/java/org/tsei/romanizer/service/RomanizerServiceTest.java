@@ -62,4 +62,10 @@ public class RomanizerServiceTest {
         String output = "hapḷ";
         assertEquals(output, romanizerService.romanize(input));
     }
+
+    @Test
+    public void testPrintAlphabet() {
+        RomanizerService romanizerService = new RomanizerService();
+        System.out.println(romanizerService.printAlphabet());
+    }
 }
