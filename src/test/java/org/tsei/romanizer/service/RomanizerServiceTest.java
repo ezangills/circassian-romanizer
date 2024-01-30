@@ -1,8 +1,12 @@
 package org.tsei.romanizer.service;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RomanizerServiceTest {
 
@@ -67,5 +71,14 @@ public class RomanizerServiceTest {
     public void testPrintAlphabet() {
         RomanizerService romanizerService = new RomanizerService();
         System.out.println(romanizerService.printAlphabet());
+    }
+
+    @Test
+    public void testAlphabetsAreSame() {
+        RomanizerService romanizerService = new RomanizerService();
+        Set<String> values1 = new HashSet<>(romanizerService.getAlphabet().values());
+        Set<String> values2 = new HashSet<>(romanizerService.getAlphabetToShow().values());
+        assertTrue(values1.containsAll(values2));
+        assertTrue(values2.containsAll(values1));
     }
 }
