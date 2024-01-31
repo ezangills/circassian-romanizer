@@ -107,8 +107,8 @@ public class RomanizerService {
         put("щ", "ʃ");
         put("Щ1", "ß");
         put("щ1", "ω");
-        put("Ы", "Ʌ");
-        put("ы", "ʌ");
+        put("Ы", "Ɨ");
+        put("ы", "ɨ");
         put("Э", "Ǝ");
         put("э", "ǝ");
         put("Ю", "U");
@@ -416,8 +416,8 @@ public class RomanizerService {
         put("щi", "ω");
         put("Щi", "ß");
 
-        put("ы", "ʌ");
-        put("Ы", "Ʌ");
+        put("ы", "ɨ");
+        put("Ы", "Ɨ");
         put("э", "ǝ");
         put("Э", "Ǝ");
         put("ю", "u");
