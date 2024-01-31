@@ -343,8 +343,8 @@ public class RomanizerService {
         put("цi", "ç");
         put("Цi", "Ç");
 
-        put("ч", "H");
-        put("Ч", "h");
+        put("ч", "h");
+        put("Ч", "H");
 
         put("чъ", "ħ");
         put("Чъ", "Ħ");
