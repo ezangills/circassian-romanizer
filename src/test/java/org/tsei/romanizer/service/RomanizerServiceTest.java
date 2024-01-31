@@ -14,7 +14,7 @@ public class RomanizerServiceTest {
     public void testRomanizerOneWord() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "Мыекъуапэ";
-        String output = "Mǝeqvapэ";
+        String output = "Mʌeqvapǝ";
         assertEquals(output, romanizerService.romanize(input));
     }
 
@@ -22,7 +22,7 @@ public class RomanizerServiceTest {
     public void testRomanizerSecondWord() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "къэлэ";
-        String output = "qэlэ";
+        String output = "qǝlǝ";
         assertEquals(output, romanizerService.romanize(input));
     }
 
@@ -38,7 +38,7 @@ public class RomanizerServiceTest {
     public void testRomanizerSentenceOne() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ. Ахэмэ чъыг сатыр дахэхэр атетых. Тыдэ уплъагъэми урамхэр къабзэх.";
-        String output = "Ti Mǝeqvapэ qэlэ dax. Ar vram zэnⱪabzэxэmⱪэ zэtevtǝгэ. Axэmэ ɖǝg satǝr daxэxэr atetǝx. Tǝdэ vpłaгэmi vramxэr qabzэx.";
+        String output = "Ti Mʌeqvapǝ qǝlǝ dax. Ar vram zǝnⱪabzǝxǝmⱪǝ zǝtevtʌгǝ. Axǝmǝ ħʌg satʌr daxǝxǝr atetʌx. Tʌdǝ vpłaгǝmi vramxǝr qabzǝx.";
         assertEquals(output, romanizerService.romanize(input));
     }
 
@@ -46,7 +46,7 @@ public class RomanizerServiceTest {
     public void testRomanizerSentenceTwo() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ. Ахэмэ чъыг сатыр дахэхэр атетых. Тыдэ уплъагъэми урамхэр къабзэх. Мыекъуапэ икъыблэ лъэныкъокӀэ псыхъоу Шъхьэгуащэ речъэкӀы. Псыхъом ыкӀыбкӀэ мэз Ӏужъу зытет къушъхьэ лъагэхэр къалэм къышъхьарэплъэх. Зы бгъумкӀэ бгы  лъагэр къалэм рекӀокӀы, адрэбгъумкӀэ чӀыгур зэныбжь. А чӀыгу зэныбжьым унакӀэхэр бэу зэтетхэу щашӀых.";
-        String output = "Ti Mǝeqvapэ qэlэ dax. Ar vram zэnⱪabzэxэmⱪэ zэtevtǝгэ. Axэmэ ɖǝg satǝr daxэxэr atetǝx. Tǝdэ vpłaгэmi vramxэr qabzэx. Mǝeqvapэ iqǝblэ łэnǝqoⱪэ psǝҳov Šḩэgvaʃэ reɖэⱪǝ. Psǝҳom ǝⱪǝbⱪэ mэz hvⲍv zǝtet qvšḩэ łagэxэr qalэm qǝšḩarэpłэx. Zǝ bгvmⱪэ bgǝ  łagэr qalэm reⱪoⱪǝ, adrэbгvmⱪэ ḍǝgvr zэnǝbե. A ḍǝgv zэnǝbեǝm vnaⱪэxэr bэv zэtetxэv ʃaꜧǝx.";
+        String output = "Ti Mʌeqvapǝ qǝlǝ dax. Ar vram zǝnⱪabzǝxǝmⱪǝ zǝtevtʌгǝ. Axǝmǝ ħʌg satʌr daxǝxǝr atetʌx. Tʌdǝ vpłaгǝmi vramxǝr qabzǝx. Mʌeqvapǝ iqʌblǝ łǝnʌqoⱪǝ psʌҳov Šẍǝgvaʃǝ reħǝⱪʌ. Psʌҳom ʌⱪʌbⱪǝ mǝz ƪvⲍv zʌtet qvšẍǝ łagǝxǝr qalǝm qʌšẍarǝpłǝx. Zʌ bгvmⱪǝ bgʌ  łagǝr qalǝm reⱪoⱪʌ, adrǝbгvmⱪǝ ꜧʌgvr zǝnʌbɩ. A ꜧʌgv zǝnʌbɩʌm vnaⱪǝxǝr bǝv zǝtetxǝv ʃaşʌx.";
         System.out.println(output);
         assertEquals(output, romanizerService.romanize(input));
     }
@@ -55,7 +55,7 @@ public class RomanizerServiceTest {
     public void testI() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "янэ сэпIыс. янэ сэп1ыс. янэ сэпIыс. янэ сэпiыс. янэ сэп|ыс. янэ сэп’ыс.";
-        String output = "yanэ sэᵽǝs. yanэ sэᵽǝs. yanэ sэᵽǝs. yanэ sэᵽǝs. yanэ sэᵽǝs. yanэ sэᵽǝs.";
+        String output = "ânǝ sǝᵽʌs. ânǝ sǝᵽʌs. ânǝ sǝᵽʌs. ânǝ sǝᵽʌs. ânǝ sǝᵽʌs. ânǝ sǝᵽʌs.";
         assertEquals(output, romanizerService.romanize(input));
     }
 
@@ -63,7 +63,7 @@ public class RomanizerServiceTest {
     public void testTwo() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "IаплI";
-        String output = "hapḷ";
+        String output = "ƪapḷ";
         assertEquals(output, romanizerService.romanize(input));
     }
 
