@@ -46,7 +46,7 @@ public class RomanizerServiceTest {
     public void testRomanizerSentenceTwo() {
         RomanizerService romanizerService = new RomanizerService();
         String input = "Ти Мыекъуапэ къэлэ дах. Ар урам зэнкӀабзэхэмкӀэ зэтеутыгъэ. Ахэмэ чъыг сатыр дахэхэр атетых. Тыдэ уплъагъэми урамхэр къабзэх. Мыекъуапэ икъыблэ лъэныкъокӀэ псыхъоу Шъхьэгуащэ речъэкӀы. Псыхъом ыкӀыбкӀэ мэз Ӏужъу зытет къушъхьэ лъагэхэр къалэм къышъхьарэплъэх. Зы бгъумкӀэ бгы  лъагэр къалэм рекӀокӀы, адрэбгъумкӀэ чӀыгур зэныбжь. А чӀыгу зэныбжьым унакӀэхэр бэу зэтетхэу щашӀых.";
-        String output = "Ti Mɨeqvapǝ qǝlǝ dax. Ar vram zǝnⱪabzǝxǝmⱪǝ zǝtevtɨгǝ. Axǝmǝ ħɨg satɨr daxǝxǝr atetɨx. Tɨdǝ vpłaгǝmi vramxǝr qabzǝx. Mɨeqvapǝ iqɨblǝ łǝnɨqoⱪǝ psɨҳov Šẍǝgvaʃǝ reħǝⱪɨ. Psɨҳom ɨⱪɨbⱪǝ mǝz ƪvⲍv zɨtet qvšẍǝ łagǝxǝr qalǝm qɨšẍarǝpłǝx. Zɨ bгvmⱪǝ bgɨ  łagǝr qalǝm reⱪoⱪɨ, adrǝbгvmⱪǝ ꜧɨgvr zǝnɨbɩ. A ꜧɨgv zǝnɨbɩɨm vnaⱪǝxǝr bǝv zǝtetxǝv ʃaşɨx.";
+        String output = "Ti Mɨeqvapǝ qǝlǝ dax. Ar vram zǝnⱪabzǝxǝmⱪǝ zǝtevtɨгǝ. Axǝmǝ ħɨg satɨr daxǝxǝr atetɨx. Tɨdǝ vpłaгǝmi vramxǝr qabzǝx. Mɨeqvapǝ iqɨblǝ łǝnɨqoⱪǝ psɨҳov Šẍǝgvaʃǝ reħǝⱪɨ. Psɨҳom ɨⱪɨbⱪǝ mǝz ƪvⲍv zɨtet qvšẍǝ łagǝxǝr qalǝm qɨšẍarǝpłǝx. Zɨ bгvmⱪǝ bgɨ  łagǝr qalǝm reⱪoⱪɨ, adrǝbгvmⱪǝ ꜧɨgvr zǝnɨbɩ. A ꜧɨgv zǝnɨbɩɨm vnaⱪǝxǝr bǝv zǝtetxǝv ʃaṣɨx.";
         System.out.println(output);
         assertEquals(output, romanizerService.romanize(input));
     }
